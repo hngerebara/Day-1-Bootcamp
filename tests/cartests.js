@@ -26,7 +26,7 @@ describe("Car Class: Create a car, make it drive", function() {
       expect((function(){return new Car('Koenigsegg', 'Agera R');}()).numOfDoors).toEqual(2);
     })
     it("The car shoud have four (4) wheels except its a type of trailer", function() {
-      var man  = new Car('Car','MAN', 'Truck', 'trailer');
+      var man  = new Car('MAN', 'Truck','Car', 'trailer');
       expect(man.numOfWheels).toEqual(8);
       expect(man.isSaloon).toEqual(false);
       var koenigsegg = new Car('Koenigsegg', 'Agera R');
@@ -34,13 +34,13 @@ describe("Car Class: Create a car, make it drive", function() {
       expect(koenigsegg.isSaloon).toBeTruthy();
     })
     it("The Trailer should have speed 0 km/h until you put `the pedal to the metal`", function() {
-      var man  = new Car('Car','MAN', 'Truck', 'trailer');
+      var man  = new Car('MAN', 'Truck','Car', 'trailer');
       expect(man.speed).toEqual('0 km/h');
       man.drive(7);
       expect(man.speed).toEqual('77 km/h');
     })
     it("The car drive function should return the instance of the Car class", function() {
-      var man  = new Car('Car','MAN', 'Truck', 'trailer');
+      var man  = new Car('MAN', 'Truck','Car', 'trailer');
       var drivingMan = man.drive(7);
       expect(drivingMan instanceof Car).toBeTruthy();
       expect(typeof drivingMan.drive).toEqual(typeof (function (){}));
